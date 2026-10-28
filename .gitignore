@@ -1,0 +1,23 @@
+# Sorties de compilation et de publication
+bin/
+obj/
+dist/
+publish/
+
+# Éditeurs et fichiers locaux
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Jamais de données personnelles : réglages, clés et conversations vivent dans %AppData%\Navbar, hors du dépôt
+secrets.json
+chats.bin
+*.log
+
+# Linux (extension GNOME Shell) : artefacts de build, pas de source
+linux/floaty@floaty.local/schemas/gschemas.compiled
+linux/*.shell-extension.zip
+
+# Outils personnels de publication (serveur, compte) : gard�s en local, jamais dans le d�p�t
+tools/

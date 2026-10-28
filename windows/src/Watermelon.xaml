@@ -1,0 +1,61 @@
+<UserControl x:Class="Navbar.Watermelon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             IsHitTestVisible="False">
+    <Viewbox Stretch="Uniform" RenderTransformOrigin="0.5,1">
+        <Viewbox.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform x:Name="HopScale" />
+                <ScaleTransform x:Name="StretchScale" />
+                <RotateTransform x:Name="Tilt" />
+                <TranslateTransform x:Name="HopShift" />
+            </TransformGroup>
+        </Viewbox.RenderTransform>
+        <Canvas Width="64" Height="36" ClipToBounds="False">
+            <!-- Accessoires selon l'heure : soleil le jour, lune et étoiles la nuit -->
+            <Canvas x:Name="SunBox" Opacity="0" Canvas.Left="-9" Canvas.Top="-13">
+                <Ellipse Width="9" Height="9" Canvas.Left="3" Canvas.Top="3" Fill="#FFC83D" />
+                <Path Stroke="#FFC83D" StrokeThickness="1.2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                      Data="M7.5,0 L7.5,2 M7.5,13 L7.5,15 M0,7.5 L2,7.5 M13,7.5 L15,7.5 M2.2,2.2 L3.6,3.6 M11.4,11.4 L12.8,12.8 M2.2,12.8 L3.6,11.4 M11.4,3.6 L12.8,2.2" />
+            </Canvas>
+            <Canvas x:Name="MoonBox" Opacity="0" Canvas.Left="-8" Canvas.Top="-13">
+                <Path Fill="#F2E8B8" Data="M9,1 A7,7 0 1 0 14,11 A5.5,5.5 0 1 1 9,1 Z" />
+                <Ellipse x:Name="Star1" Width="2" Height="2" Canvas.Left="15" Canvas.Top="1" Fill="#F2E8B8" />
+                <Ellipse x:Name="Star2" Width="1.6" Height="1.6" Canvas.Left="19" Canvas.Top="7" Fill="#F2E8B8" />
+            </Canvas>
+
+            <TextBlock x:Name="SleepZ" Text="z z" RenderTransformOrigin="0.5,0.5" Foreground="{DynamicResource DimBrush}" FontSize="9" FontWeight="Bold"
+                       Canvas.Left="46" Canvas.Top="-10" Visibility="Collapsed" />
+            <TextBlock x:Name="Hello" Text="hi!" Foreground="{DynamicResource DimBrush}" FontSize="9" FontWeight="Bold"
+                       Canvas.Left="48" Canvas.Top="-10" Opacity="0" />
+            <Path Fill="#1F7A3A" Data="M0,0 A32,32 0 0 0 64,0 Z" />
+            <Path Fill="#C8E8A8" Data="M3,0 A29,29 0 0 0 61,0 Z" />
+            <Path Fill="#FF4D5E" Data="M6,0 A26,26 0 0 0 58,0 Z" />
+            <Ellipse Canvas.Left="14" Canvas.Top="19" Width="3" Height="5" Fill="#3A0A10" />
+            <Ellipse Canvas.Left="47" Canvas.Top="19" Width="3" Height="5" Fill="#3A0A10" />
+            <Ellipse Canvas.Left="31" Canvas.Top="24" Width="3" Height="5" Fill="#3A0A10" />
+            <Ellipse Canvas.Left="21" Canvas.Top="8" Width="6" Height="9" Fill="Black" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform><TransformGroup><ScaleTransform x:Name="EyeLScale" /><TranslateTransform x:Name="EyeLShift" /></TransformGroup></Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Canvas.Left="37" Canvas.Top="8" Width="6" Height="9" Fill="Black" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform><TransformGroup><ScaleTransform x:Name="EyeRScale" /><TranslateTransform x:Name="EyeRShift" /></TransformGroup></Ellipse.RenderTransform>
+            </Ellipse>
+            <Path x:Name="Smile" Stroke="Black" StrokeThickness="1.6" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                  Data="M28,19 Q32,23 36,19" />
+            <!-- Bouche ouverte : bâillement ou mastication -->
+            <Ellipse x:Name="OpenMouth" Canvas.Left="28.5" Canvas.Top="18.5" Width="7" Height="8" Fill="#3A0A10" Opacity="0"
+                     RenderTransformOrigin="0.5,0">
+                <Ellipse.RenderTransform><ScaleTransform x:Name="MouthScale" ScaleY="0" /></Ellipse.RenderTransform>
+            </Ellipse>
+            <!-- Expressions ponctuelles : joues rosies, yeux étoilés, goutte de sueur -->
+            <Ellipse x:Name="BlushL" Canvas.Left="12" Canvas.Top="16.5" Width="6" Height="3.4" Fill="#FF8FA3" Opacity="0" />
+            <Ellipse x:Name="BlushR" Canvas.Left="46" Canvas.Top="16.5" Width="6" Height="3.4" Fill="#FF8FA3" Opacity="0" />
+            <Path x:Name="SparkL" Canvas.Left="24" Canvas.Top="12.5" Fill="#FFE066" Opacity="0" RenderTransformOrigin="0,0"
+                  Data="M0,-5 L1.3,-1.3 L5,0 L1.3,1.3 L0,5 L-1.3,1.3 L-5,0 L-1.3,-1.3 Z" />
+            <Path x:Name="SparkR" Canvas.Left="40" Canvas.Top="12.5" Fill="#FFE066" Opacity="0" RenderTransformOrigin="0,0"
+                  Data="M0,-5 L1.3,-1.3 L5,0 L1.3,1.3 L0,5 L-1.3,1.3 L-5,0 L-1.3,-1.3 Z" />
+            <Path x:Name="Sweat" Canvas.Left="52" Canvas.Top="3" Fill="#7CC4FF" Opacity="0"
+                  Data="M2,0 C2,0 0,3 0,4.6 A2,2 0 0 0 4,4.6 C4,3 2,0 2,0 Z" />
+        </Canvas>
+    </Viewbox>
+</UserControl>
